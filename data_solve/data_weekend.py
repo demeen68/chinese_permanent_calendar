@@ -37,7 +37,7 @@ def change_seg(series):
 
 
 if __name__ == '__main__':
-    df = pd.read_csv('~/Desktop/chinese_perpetual_calendar .csv', sep=';')
+    df = pd.read_csv('cp_calendar.csv', sep=';')
     df.drop('LunarShow', axis=1, inplace=True)
     df = df.apply(change_seg, axis=1)
     df.to_csv('cp_calendar.csv', index=False)
