@@ -6,7 +6,7 @@ import pandas as pd
 _calendar = PerpetualCalendar()
 
 
-def get_all_data():
+def get_all_data() -> str:
     return _calendar.get_all_data()
 
 
@@ -36,3 +36,25 @@ def is_weekend(date: datetime.date) -> bool:
 
 def is_weekday(date: datetime.date) -> bool:
     return not is_weekend(date)
+
+
+def get_lunar_date(date: datetime.date):
+    return _calendar.calendar.loc[str(date), [
+        'LYear', 'LMonth', 'LDay',
+    ]]
+
+
+# todo get festival by a day
+# todo check festival in a day
+# todo get all carnival
+def get_all_festival(festival='', start='1970-01-01', end='2099-12-31'):
+    if pd.isna(festival):
+        return None
+    data = get_all_data()
+    # todo 优化
+    data = data[(data.index > start)]
+    data = data[(data.index < end)]
+
+
+
+    print('a')

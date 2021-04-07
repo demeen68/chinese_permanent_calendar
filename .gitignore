@@ -7,7 +7,8 @@
 *ear
 
 #kdiff3 ignore
-
+/data_solve/
+data_solve/
 *.idea
 
 venv/
