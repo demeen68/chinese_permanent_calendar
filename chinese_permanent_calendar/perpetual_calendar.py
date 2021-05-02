@@ -14,5 +14,11 @@ class PerpetualCalendar(object):
         self.calendar['is_weekend'] = self.calendar['is_weekend'].astype('bool')
         self.calendar.set_index('GregorianDateTime', inplace=True)
 
-    def get_all_data(self):
-        return self.calendar
+    def get_all_data(self, start, end):
+        data = self.calendar
+        if start:
+            # todo 优化
+            data = data[(data.index > start)]
+        if end:
+            data = data[(data.index < end)]
+        return data
