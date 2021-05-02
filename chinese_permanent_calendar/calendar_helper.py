@@ -77,6 +77,12 @@ def get_lunar_by_gregorian(date: datetime.date) -> pd.Series:
 
 
 def get_gregorian_by_lunar(date: datetime.date):
+    """
+
+    :param date:
+    :type date: datetime.date
+    :return:
+    """
     all_data = get_all_data()
     target_data = all_data[all_data['LunarDateTime'] == str(date)]
     if target_data.empty:
@@ -87,8 +93,10 @@ def get_gregorian_by_lunar(date: datetime.date):
 
 # 8:节假日、工作日
 def is_weekend(date: datetime.date) -> bool:
+    """判断一天是否为节假日"""
     return _calendar.calendar.loc[str(date), 'is_weekend']
 
 
 def is_weekday(date: datetime.date) -> bool:
+    """判断一天是否为工作日"""
     return not is_weekend(date)
