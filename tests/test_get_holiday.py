@@ -11,6 +11,9 @@ class AddCodeTest(unittest.TestCase):
         april_last = datetime.date(2018, 4, 30)
         self.assertIsNotNone(get_lunar_by_gregorian(april_last))
         self.assertIsNone(get_gregorian_by_lunar(april_last))
+
+    def test_error_info(self):
+        from chinese_permanent_calendar import get_gregorian_by_lunar
         self.assertIsNotNone(get_gregorian_by_lunar(datetime.date(1969, 11, 25)))
 
     def test_holiday(self):
