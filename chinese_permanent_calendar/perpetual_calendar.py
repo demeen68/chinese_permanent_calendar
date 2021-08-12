@@ -12,12 +12,12 @@ class PerpetualCalendar(object):
         # self.calendar['GregorianDateTime'] = pd.to_datetime(self.calendar['GregorianDateTime'], format="%Y-%m-%d", )
         self.calendar['is_weekday'] = self.calendar['is_weekday'].astype('bool')  # 转为 bool 类型
         self.calendar['is_weekend'] = self.calendar['is_weekend'].astype('bool')
-        self.calendar.set_index('GregorianDateTime', inplace=True)
+        self.calendar.set_index('GregorianDate', inplace=True)
 
     def get_all_data(self, start, end):
         data = self.calendar
         if start:
-            # todo 优化
+            # todo 待优化
             data = data[(data.index > start)]
         if end:
             data = data[(data.index < end)]

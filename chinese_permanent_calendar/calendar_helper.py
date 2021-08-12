@@ -42,7 +42,7 @@ def get_lunar_festival(date: datetime.date) -> str:
     return _calendar.calendar.loc[str(date), 'LJie']
 
 
-def get_festival_by_days(start='1970-01-01', end='2099-12-31', gregorian=True, lunar=True) -> set:
+def get_festival_by_days(start: str = '1970-01-01', end: str = '2099-12-31', gregorian=True, lunar=True) -> set:
     """得到一个时间段内的全部节日"""
     data = get_all_data(start, end)
     festival = set()
@@ -53,7 +53,8 @@ def get_festival_by_days(start='1970-01-01', end='2099-12-31', gregorian=True, l
     return festival
 
 
-def get_days_by_festival(festival: list, start='1970-01-01', end='2099-12-31', gregorian=True, lunar=True):
+def get_days_by_festival(festival: list, start: str = '1970-01-01', end: str = '2099-12-31', gregorian=True,
+                         lunar=True):
     """查询一个时间段内包含这个节日的日子"""
     data = get_all_data(start, end)
     check_df = pd.DataFrame(columns=data.columns)
@@ -69,7 +70,7 @@ def get_days_by_festival(festival: list, start='1970-01-01', end='2099-12-31', g
 # 7:日期转换
 def get_lunar_by_gregorian(date: datetime.date) -> pd.Series:
     """
-    根究阳历，得到对应的阴历的  阴历时间、阴历节日、宜、忌、冲、煞、神位、胎神 信息
+    根据阳历，得到对应的阴历的：阴历时间、阴历节日、宜、忌、冲、煞、神位、胎神 信息
     :param date: 阳历日期
     :return: 阴历时间、阴历节日、宜、忌、冲、煞、神位、胎神
     """
@@ -78,13 +79,13 @@ def get_lunar_by_gregorian(date: datetime.date) -> pd.Series:
 
 def get_gregorian_by_lunar(date: datetime.date):
     """
-
-    :param date:
+    根据阴历日期，得到
+    :param date: 阴历日期
     :type date: datetime.date
     :return:
     """
     all_data = get_all_data()
-    target_data = all_data[all_data['LunarDateTime'] == str(date)]
+    target_data = all_data[all_data['LunarDate'] == str(date)]
     if target_data.empty:
         return None
     else:

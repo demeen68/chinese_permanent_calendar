@@ -11,5 +11,5 @@ __all__ = [
     'is_weekday',
     'is_weekend',
     'get_festival_by_days',
-    'get_days_by_festival'
+    'get_days_by_festival',
 ]
