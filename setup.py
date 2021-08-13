@@ -24,6 +24,6 @@ setup(
         "Programming Language :: Python :: 3.8",
     ],
     package_data={
-        'chinese_permanent_calendar': ['cp_calendar.pkl'],
+        'chinese_permanent_calendar': ['cp_calendar.csv.gz'],
     }
 )
