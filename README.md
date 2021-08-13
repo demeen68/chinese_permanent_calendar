@@ -21,10 +21,10 @@ Chinese permanent calendar
 
 
 # 使用说明
+pypi地址：https://pypi.org/project/chinese-permanent-calendar
 
-```py
-
-
+```bash
+pip install chinese-permanent-calendar
 ```
 # 示例
 
