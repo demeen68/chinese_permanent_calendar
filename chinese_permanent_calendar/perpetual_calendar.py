@@ -6,7 +6,9 @@ class PerpetualCalendar(object):
     def __init__(self):
         import os.path
         file_path = os.path.abspath(os.path.dirname(__file__))
-        self.calendar: pd.DataFrame = pd.read_pickle(file_path + '/cp_calendar.pkl')  # This is a data file
+        # self.calendar: pd.DataFrame = pd.read_pickle(file_path + '/cp_calendar.pkl')  # This is a data file
+        self.calendar: pd.DataFrame = pd.read_csv(file_path + '/cp_calendar.csv.gz', compression='gzip')
+
         self.calendar[['GYear', 'GMonth', 'GDay']] = self.calendar[['GYear', 'GMonth', 'GDay']].apply(
             pd.to_numeric)
         # self.calendar['GregorianDateTime'] = pd.to_datetime(self.calendar['GregorianDateTime'], format="%Y-%m-%d", )

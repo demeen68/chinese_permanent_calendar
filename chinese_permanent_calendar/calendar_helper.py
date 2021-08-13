@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from perpetual_calendar import PerpetualCalendar
+from .perpetual_calendar import PerpetualCalendar
 import datetime
 import pandas as pd
 
