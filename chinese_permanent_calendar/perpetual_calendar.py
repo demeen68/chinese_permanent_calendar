@@ -16,6 +16,7 @@ class PerpetualCalendar(object):
 
     def get_all_data(self, start, end):
         data = self.calendar
+        # if start
         if start:
             # todo 待优化
             data = data[(data.index > start)]
