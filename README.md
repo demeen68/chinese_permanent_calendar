@@ -72,7 +72,7 @@ all_data = calendar.get_all_data(start=datetime.date(2020, 1, 1), end=datetime.d
 |XingWest|西方星座-12星座|
 |PengZu|彭祖百忌|
 |JianShen|十二建星|
-|TianGanDiZhiYear|天干地支-奶牛|
+|TianGanDiZhiYear|天干地支-年|
 |TianGanDiZhiMonth|天干地支-月|
 |TianGanDiZhiDay|天干地支-日|
 |LMonthName|农历-月份别名|
