@@ -56,3 +56,7 @@ target/
 .DS_Store
 
 Thumbs.db
+
+dist
+tests
+chinese_permanent_calendar.egg-info
